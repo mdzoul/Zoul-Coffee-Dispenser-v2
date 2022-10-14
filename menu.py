@@ -25,10 +25,16 @@ class Menu:
 
     def get_items(self):
         """Returns all the names of the available menu items"""
-        options = ""
+        options = []
         for item in self.menu:
-            options += f"{item.name}/"
+            options += [item.name.capitalize()]
         return options
+
+    def get_price(self):
+        price = []
+        for item in self.menu:
+            price += [item.cost]
+        return price
 
     def find_drink(self, order_name):
         """Searches the menu for a particular drink by name. Returns that item if it exists, otherwise returns None"""
